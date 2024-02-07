@@ -1,0 +1,398 @@
+/* css reset */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 850px;
+    height: 450px;
+    margin: 0 auto;
+    background: #fff2e475;
+    font-weight: 600;
+    border: 1px solid red;
+  }
+  
+  .menu {
+    position: absolute;
+    top: 20px;
+    font-size: 26px;
+    font-weight: bold;
+  }
+  
+  /* 杯子 */
+  .cup {
+    position: relative;
+    height: 200px;
+    width: 150px;
+    border: 10px solid #b7936e;
+    border-radius: 0 0 30px 30px;
+    overflow: hidden;
+    z-index:30;
+  }
+  
+  .cup-handle {
+    position: absolute;
+    height: 90px;
+    width: 30px;
+    left: 275px;
+    top: 153px;
+    border-radius: 0 30px 60px 0;
+    border: 10px solid #b7936e;
+  }
+  
+  /* 咖啡種類 */
+  .coffee-type {
+    margin-top: 50px;
+    width: 40%;
+  }
+  
+  .type {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 50px;
+    width: 350px;
+  }
+  
+  .type li {
+    width: 140px;
+    padding: 10px;
+    margin-bottom: 5px;
+    line-height: 20px;
+  }
+  
+  .type li:hover {
+    color: #f07e0a;
+    font-weight: bold;
+  }
+  
+  /* 各品項成分 */
+  .type li::before, 
+  .type li::after, 
+  .latte-base::after,
+  .cappuccino-base::after,
+  .mocha-base::after,
+  .mocha-base::before, 
+  .macchiato-base::after {
+    position: absolute;
+    content: '';
+    width: 150px;
+    height: 0;
+    text-align: center;
+    font-weight: bold;
+    left:123px;
+    bottom: 125px;
+    border-radius: 0 0 20px 20px;
+  }
+  
+  /* 美式咖啡 */
+  .americano::before , .americano::after { 
+    background: #60302f;
+    color: #ffffff;
+  }
+  
+  .americano:hover::before {
+    content: '濃縮咖啡';
+    height: 40px;
+    padding-top: 10px;
+    transition: height 0.5s;
+    z-index: 4;
+  }
+  
+  .americano:hover::after {
+    content: '水';
+    background: #aedbe2;
+    height: 130px;
+    padding-top: 70px;
+    transition: height 0.3s;
+    z-index: 3;
+  }
+  
+  .americano:hover  .americano-detail::before {
+    position: absolute;
+    content:'1濃縮咖啡 : 12水';
+    width: 0 auto;
+    background: rgba(252, 187, 109, .13);;
+    top:350px;
+    left:130px;
+    padding: 10px;
+    color: #f05151;
+    font-weight: bold;
+    border-radius:40px;
+  }
+  
+  /* 拿鐵咖啡 */
+  .latte::before , .latte::after  { 
+    background: #60302f;
+    color: #ffffff;
+  }
+  
+  .latte:hover::before {
+    content: '濃縮咖啡';
+    height: 30px;
+    padding-top: 10px;
+    transition: height 0.5s;
+    z-index: 4;
+  }
+  
+  .latte:hover::after {
+    content: '熱牛奶';
+    background: white;
+    color: black;
+    height: 120px;
+    padding-top: 40px;
+    transition: height 0.3s;
+    z-index: 3;
+  }
+  .latte-base::after {
+    color: black;
+    background: #e7ecba;
+    transition: height 0.4s;
+  }
+  
+  .latte:hover .latte-base::after {
+    content: '奶泡';
+    height: 190px; 
+    padding-top: 10px;
+  }
+  
+  
+  .latte:hover .latte-detail::before {
+    position: absolute;
+    content:'1濃縮咖啡 : 4熱牛奶 : 1奶泡';
+    width: 0 auto;
+    background: rgba(252, 187, 109, .13);;
+    top:350px;
+    left:95px;
+    padding: 10px;
+    color: #f05151;
+    font-weight: bold;
+    border-radius:40px;
+  }
+  
+  /* 卡布奇諾 */
+  .cappuccino::before , .cappuccino::after {
+    background: #60302f;
+    color: #ffffff;
+  }
+  
+  .cappuccino:hover::before {
+    content: '濃縮咖啡';
+    height: 50px;
+    padding-top: 10px;
+    transition: height 0.5s;
+    z-index: 4;
+  }
+  
+  .cappuccino:hover::after {
+    content: '熱牛奶';
+    background: white;
+    color: black;
+    height: 105px;
+    padding-top: 30px;
+    transition: height 0.3s;
+    z-index: 3;
+  }
+  .cappuccino-base::after {
+    color: black;
+    background: #e7ecba;
+    transition: height 0.4s;
+  }
+  
+  .cappuccino:hover .cappuccino-base::after {
+    content: '奶泡';
+    height: 180px; 
+    padding-top: 20px;
+  }
+  
+  
+  .cappuccino:hover .cappuccino-detail::before {
+    position: absolute;
+    content:'1濃縮咖啡 : 1熱牛奶 : 1奶泡';
+    width: 0 auto;
+    background: rgba(252, 187, 109, .13);;
+    top:350px;
+    left:95px;
+    padding: 10px;
+    color: #f05151;
+    font-weight: bold;
+    border-radius:40px;
+  }
+  /* 摩卡咖啡 */
+  .mocha::before , .mocha::after  { 
+    background: #60302f;
+    color: #ffffff;
+  }
+  
+  .mocha:hover::before {
+    content: '濃縮咖啡';
+    height: 35px;
+    padding-top: 10px;
+    transition: height 0.5s;
+    z-index: 4;
+  }
+  
+  .mocha:hover::after {
+    content: '巧克力糖漿';
+    background: #573109;
+    height: 75px;
+    padding-top: 10px;
+    transition: height 0.3s;
+    z-index: 3;
+  }
+  .mocha-base::before,.mocha-base::after {
+    color: black;
+    transition: height 0.4s;
+  }
+  .mocha:hover .mocha-base::before {
+    background: white;
+    content: '牛奶';
+    height: 130px; 
+    padding-top: 20px;
+    z-index: 2;
+  }
+  
+  .mocha:hover .mocha-base::after {
+    content: '奶泡';
+    background: #e7ecba;
+    height: 180px; 
+    padding-top: 20px;
+  }
+  
+  
+  .mocha:hover .mocha-detail::before {
+    position: absolute;
+    content:'1濃縮咖啡 : 0.5巧克力糖漿 : 1.5鮮奶 : 1奶泡';
+    width: 0 auto;
+    background: rgba(252, 187, 109, .13);;
+    top:350px;
+    left:45px;
+    padding: 10px;
+    color: #f05151;
+    font-weight: bold;
+    border-radius:40px;
+  }
+  
+  /* 義式濃縮咖啡 */
+  .espresso::before { 
+    background: #60302f;
+    color: #ffffff;
+  }
+  
+  .espresso:hover::before {
+    content: '濃縮咖啡';
+    height: 110px;
+    padding-top: 90px;
+    transition: height 0.3s;
+    z-index: 3;
+  }
+  
+  .espresso:hover  .espresso-detail::before {
+    position: absolute;
+    content:'全濃縮咖啡';
+    width: 0 auto;
+    background: rgba(252, 187, 109, .13);;
+    top:350px;
+    left:150px;
+    padding: 10px;
+    color: #f05151;
+    font-weight: bold;
+    border-radius:40px;
+  }
+  
+  
+  /* 焦糖瑪奇朵 */
+  .macchiato::before , .macchiato::after  { 
+    background: #60302f;
+  }
+  
+  .macchiato:hover::before {
+    content: '濃縮咖啡';
+    height: 85px;
+    padding-top: 60px;
+    color: #ffffff;
+    transition: height 0.5s;
+    z-index: 4;
+  }
+  
+  .macchiato:hover::after {
+    content: '奶泡';
+    color: black;
+    background: #e7ecba;
+    height: 180px;
+    transition: height 0.3s;
+    z-index: 3;
+  }
+  .macchiato-base::after {
+    color: black;
+    background: #e7ecba;
+    transition: height 0.4s;
+  }
+  
+  .macchiato:hover .macchiato-base::after {
+    content: '糖漿';
+    background: #e5bf98;
+    height: 200px;
+  }
+  
+  
+  .macchiato:hover .macchiato-detail::before {
+    position: absolute;
+    content:'3濃縮咖啡 : 1奶泡 : 0.5糖漿';
+    width: 0 auto;
+    background: rgba(252, 187, 109, .13);;
+    top:350px;
+    left:95px;
+    padding: 10px;
+    color: #f05151;
+    font-weight: bold;
+    border-radius:40px;
+  }
